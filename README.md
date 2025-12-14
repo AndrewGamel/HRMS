@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="HRMS Creating By Androw"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://go-better.com/blog/five-ways-modern-hrms-solve-traditional-issues-faced-by-hr/" width="400" alt="HRMS Creating By Androw"></a></p>
 
 
 ## About Project 
