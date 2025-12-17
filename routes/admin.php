@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\admin_panal_settingController;
 use App\Http\Controllers\Admin\Finance_calendersController;
 
+use App\Http\Controllers\Admin\BranchController;
 
 
 /*
@@ -32,8 +33,15 @@ function (){
 Route::get('/genralsettings',[admin_panal_settingController::class,'index'])->name('admin_panal_settings.index');
 Route::get('/genralsettings/edit',[admin_panal_settingController::class,'edit'])->name('admin_panal_settings.edit');
 Route::post('/genralsettings/update',[admin_panal_settingController::class,'update'])->name('admin_panal_settings.update');
+/** بداية تكويد السنة المالية */
 Route::get('/finance_calenders/delete/{id}',[Finance_calendersController::class,'destroy'])->name('finance_calenders.delete');
 Route::resource('/finance_calenders',Finance_calendersController::class);
+/** بداية  الفروع */
+Route::get('/branches',[BranchController::class,'index'])->name('branches.index');
+Route::get('/branches/create',[BranchController::class,'create'])->name('branches.create');
+Route::post('/branches/store',[BranchController::class,'store'])->name('branches.store');
+
+
 });
 
 //if user haven't been auth

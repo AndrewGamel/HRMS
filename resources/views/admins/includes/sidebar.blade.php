@@ -26,16 +26,23 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="{{route('admin_panal_settings.index') }}" class="nav-link @yield('active_page')">
+            <a href="{{route('admin_panal_settings.index') }}" class="nav-link ">
               <i class="far fa-steam-square  nav-icon"></i>
               <p>الضبط العام
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('finance_calenders.index') }}" class="nav-link @yield('active_page')">
+            <a href="{{route('finance_calenders.index') }}" class="nav-link ">
               <i class="far fa-steam-square  nav-icon"></i>
               <p> السنوات المالية
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('branches.index') }}" class="nav-link ">
+              <i class="far fa-steam-square  nav-icon"></i>
+              <p>  الفروع
               </p>
             </a>
           </li>
