@@ -24,11 +24,12 @@
 
                     <table id="example2" class="table table-bordered table-hover ">
                         <thead class="thead-light">
-                            <th>كود السنة</th>
-                            <th>وصف السنة</th>
-                            <th>تاريخ البداية</th>
-                            <th>تاريخ النهاية</th>
-                            <th>الأضافة بوايطة</th>
+                            <th>كود الفرع</th>
+                            <th> الاسم</th>
+                            <th> العنوان</th>
+                            <th>الهاتف </th>
+                            <th> حالة اتفعيل</th>
+                            <th>الإضافة بواسطة</th>
                             <th>التحديث بواسطة</th>
                             <th></th>
                         </thead>

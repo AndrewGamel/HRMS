@@ -1,32 +1,33 @@
 @extends('layouts.admin')
-@section('title', ' تعديل  السنة المالية ')
+
+@section('title', ' إنشاء فرع ')
+
 @section('active_page', 'active')
 
 
 @section('content_header_active_link')
-    <a href="{{ route('finance_calenders.index') }}">السنوات المالية </a>
+    <a href="{{ route('finance_calenders.index') }}">الضبط السنوات المالية</a>
 @endsection
 
-@section('content_header_active', 'تعديل/')
+{{-- @section('content_header_active', 'تعديل/') --}}
 
 @section('content')
 
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title card_title_center"> تعديل السنة المالية</h3>
+            <div class="card-header ">
+                <h3 class="card-title card_title_center"> تكويد سنة المالية جديدة</h3>
             </div>
-            <div class="card-body">
 
-                    <form action="{{ route('finance_calenders.update',$data->id) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="row">
-                           <div class="col-md-6">
+            <div class="card-body">
+                <form action="{{ route('finance_calenders.store') }}" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="FINANCE_YR"> كود السنة المالية</label>
                                 <input type="text" id="FINANCE_YR" class="form-control" placeholder=" كود السنة "
-                                    value="{{ old('FINANCE_YR',$data['FINANCE_YR']) }}" name="FINANCE_YR">
+                                    value="{{ old('FINANCE_YR') }}" name="FINANCE_YR">
                                 @error('FINANCE_YR')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -38,7 +39,7 @@
                             <div class="form-group">
                                 <label for="FINANCE_YR_DESC"> وصف السنة المالية</label>
                                 <input type="text" id="FINANCE_YR_DESC" class="form-control"
-                                    placeholder=" وصف السنة " value="{{ old('FINANCE_YR_DESC',$data['FINANCE_YR_DESC']) }}"
+                                    placeholder=" وصف السنة " value="{{ old('FINANCE_YR_DESC') }}"
                                     name="FINANCE_YR_DESC">
                                 @error('FINANCE_YR_DESC')
                                     <span class="text-danger">{{ $message }}</span>
@@ -50,7 +51,7 @@
                             <div class="form-group">
                                 <label for="start_date"> بداية السنة المالية</label>
                                 <input type="date" id="start_date" class="form-control" placeholder=" بداية السنة "
-                                    value="{{ old('start_date',$data['start_date']) }}" name="start_date">
+                                    value="{{ old('start_date') }}" name="start_date">
                                 @error('start_date')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -60,23 +61,19 @@
                             <div class="form-group">
                                 <label for="end_date">النهاية السنة المالية</label>
                                 <input type="date" id="end_date" class="form-control" placeholder=" النهاية السنة "
-                                    value="{{ old('end_date',$data['end_date']) }}" name="end_date">
+                                    value="{{ old('end_date') }}" name="end_date">
                                 @error('end_date')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
-
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-success "><i class="fas fa-mark"></i>تحديث</button>
-                                 <a href="{{ route('finance_calenders.index') }}" class="btn btn-danger ">إلغاء</a>
-                            </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-success "><i class="far fa-mark"></i>إضافة</button>
                         </div>
-                    </form>
-
-
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 @endsection
-
+{{-- --}}

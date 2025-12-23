@@ -10,4 +10,8 @@ class BranchController extends Controller
     public function index(){
           return view('admins.Branches.index');
     }
+
+public function create(){
+          return view('admins.Branches.create');
+    }
 }

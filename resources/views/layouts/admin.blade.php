@@ -26,7 +26,9 @@
   <!-- Google Font: Source Sans Pro -->
   {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
   <!-- Bootstrap 4 RTL -->
-  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
+  {{-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"> --}}
+  <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/bootstrap.min.css') }}">
+
   <!-- Custom style for RTL -->
   <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/custom.css') }}">
 </head>
@@ -88,7 +90,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/admin/js/general.js') }}"></script>
 
-
+@yield('script')
 
 
 </body>

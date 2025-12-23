@@ -1,8 +1,8 @@
 $(document).ready(function () {
-$(document).on('are_u_sure').click(function{
- var res = confirm('هل أنت متأكد من الحذف');
- if (!res) {
-return false
- }
-});
+    $(document).on('click','.are_u_sure',function () {
+        var res = confirm('هل أنت متأكد من الحذف');
+        if (!res) {
+            return false
+        }
+    });
 });
