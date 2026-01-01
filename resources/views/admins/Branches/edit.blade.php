@@ -1,7 +1,5 @@
 @extends('layouts.admin')
-
-@section('title', ' إنشاء فرع ')
-
+@section('title', ' تعديل  الفرع ')
 @section('content_header')
     قائمةالضبط
 @endsection
@@ -10,29 +8,27 @@
     <a href="{{ route('branches.index') }}">الفروع  </a>
 @endsection
 
-@section('content_header_active')
-    إنشاء فرع
-@endsection
-
-
+@section('content_header_active', 'تعديل/')
 
 @section('content')
 
     <div class="col-12">
         <div class="card">
-            <div class="card-header ">
-                <h3 class="card-title card_title_center"> إضافة فرع جديد </h3>
+            <div class="card-header">
+                <h3 class="card-title card_title_center"> تعديل بيانات الفرع</h3>
             </div>
-
             <div class="card-body">
-                <form action="{{ route('branches.store') }}" method="post">
-                    @csrf
-                    <div class="row">
+
+                    <form action="{{ route('finance_calenders.update',$data->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name">  أسم الفرع </label>
                                 <input type="text" id="name" class="form-control" placeholder="أكتب أسم الفرع "
-                                    value="{{ old('name') }}" name="name">
+                                    value="{{ old('name',) }}" name="name">
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -86,13 +82,22 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-success "><i class="far fa-mark"></i>إضافة</button>
+
+
+
+
+
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-success "><i class="fas fa-mark"></i>تحديث</button>
+                                 <a href="{{ route('finance_calenders.index') }}" class="btn btn-danger ">إلغاء</a>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+
+
             </div>
         </div>
     </div>
 @endsection
-{{-- --}}
+

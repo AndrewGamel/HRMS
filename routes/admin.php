@@ -47,6 +47,9 @@ Route::group(
         Route::get('/branches', [BranchController::class, 'index'])->name('branches.index');
         Route::get('/branches/create', [BranchController::class, 'create'])->name('branches.create');
         Route::post('/branches/store', [BranchController::class, 'store'])->name('branches.store');
+         Route::get('/branches/delete/{id}', [BranchController::class, 'destroy'])->name('branches.delete');
+        Route::get('/branches/edit/{id}', [BranchController::class, 'edit'])->name('branches.edit');
+        Route::post('/branches/update', [BranchController::class, 'update'])->name('branches.update');
     }
 );
 

@@ -23,7 +23,9 @@ class Finance_calendersController extends Controller
      */
     public function index()
     {
-        $data = Finance_calender::select('*')->orderby('FINANCE_YR', 'DESC')->paginate(PAGINATION_COUNTER);
+        $com_code = auth()->user()->com_code;
+       // $data = Finance_calender::select('*')->orderby('FINANCE_YR', 'DESC')->paginate(PAGINATION_COUNTER);
+        $data= get_cols_where_p(new Finance_calender(),array('*'),array('com_code'=>$com_code),'FINANCE_YR', 'DESC',PAGINATION_COUNTER);
         $checkIsOpenCount = Finance_calender::where('is_open', 1)->count();
         return view('admins.Finance_calender.index', compact('data', 'checkIsOpenCount'));
     }
@@ -201,7 +203,7 @@ class Finance_calendersController extends Controller
             return view('admins.Finance_calender.show_year_month', compact('finance_cln_period'));
         }
     }
-    
+
     public function do_open($id)
     {
         try {
