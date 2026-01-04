@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', ' السنوات المالية ')
-
+@section('content_header',' قائمةالضبط')
 @section('active_page', 'active')
 
 

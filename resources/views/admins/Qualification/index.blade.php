@@ -1,9 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', ' الفروع ')
+@section('title', ' المؤهلات ')
+
 @section('content_header',' قائمةالضبط')
+
+
+
 @section('content_header_active_link')
-    <a href="{{ route('branches.index') }}">الضبط الفروع </a>
+    <a href="{{ route('qualifications.index') }}">الضبط المؤهلات </a>
 @endsection
 
 {{-- @section('content_header_active', 'تعديل/') --}}
@@ -14,9 +18,9 @@
         <div class="card">
             <div class="card-header ">
                 <h3 class="card-title card_title_center">
-                    بيانات فروع الشركة
+                    بيانات المؤهلات للموظفيين
 
-                    <a href="{{ route('branches.create') }}" class="btn btn-success ">إضافة</a>
+                    <a href="{{ route('qualifications.create') }}" class="btn btn-success ">إضافة</a>
                 </h3>
             </div>
             <div class="card-body">
@@ -58,8 +62,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('branches.edit', $info->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('branches.destroy', $info->id) }}" class="btn btn-danger btn-sm my-1 are_u_sure"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="{{ route('qualifications.edit', $info->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('qualifications.destroy', $info->id) }}" class="btn btn-danger btn-sm my-1 are_u_sure"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

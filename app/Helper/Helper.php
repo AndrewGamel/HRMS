@@ -82,14 +82,16 @@ return $flag;
 // $data = $model::where($where)->value($field_name);
 // return $data;
 // }
-// function update($model=null,$data_to_update=array(),$where=array()){
-// $flag=$model::where($where)->update($data_to_update);
-// return $flag;
-// }
-// function destroy($model=null,$where=array()){
-// $flag=$model::where($where)->delete();
-// return $flag;
-// }
+function update($model=null,$data_to_update=array(),$where=array()){
+$flag=$model::where($where)->update($data_to_update);
+return $flag;
+}
+
+function destroy($model=null,$where=array()){
+$flag=$model::where($where)->delete();
+return $flag;
+}
+
 // function get_sum_where($model=null,$field_name=null,$where=array()){
 // $sum=$model::where($where)->sum($field_name);
 // return $sum;
