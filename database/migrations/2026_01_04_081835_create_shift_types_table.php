@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('shift_types', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('type')->comment('واحد صباحي- صفر مسائي');
+            $table->time('from_time');
+            $table->time('to_time');
+            $table->decimal('total_hours',10,2);
+            $table->integer('com_code');
+            $table->integer('added_by');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

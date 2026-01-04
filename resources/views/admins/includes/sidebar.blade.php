@@ -26,7 +26,7 @@
                 </p>
             </a>
             <ul class="nav nav-treeview">
-                
+
                 <li class="nav-item">
                     <a href="{{ route('admin_panal_settings.index') }}" class="nav-link ">
                         <i class="far fa-steam-square  nav-icon"></i>
@@ -50,6 +50,14 @@
                         </p>
                     </a>
                 </li>
+                                <li class="nav-item">
+                    <a href="{{ route('shift_types.index') }}" class="nav-link ">
+                        <i class="far fa-steam-square  nav-icon"></i>
+                        <p> أنواع الشفتات
+                        </p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="{{ route('qualifications.index') }}" class="nav-link ">

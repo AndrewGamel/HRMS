@@ -41,6 +41,9 @@ Route::group(
         /** بداية  الفروع */
         require __DIR__ . '/branche.php';
 
+        /** بداية  انواع الشفتات */
+        require __DIR__ . '/shift_types.php';
+        
         /** بداية  المؤهلات */
         require __DIR__ . '/qualification.php';
     }
