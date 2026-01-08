@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', ' المؤهلات ')
+@section('title', ' انواع الشفتات')
 
-@section('content_header',' قائمةالضبط')
+@section('content_header', ' قائمةالضبط')
 
 
 
 @section('content_header_active_link')
-    <a href="{{ route('qualifications.index') }}">الضبط المؤهلات </a>
+    <a href="{{ route('shift_types.index') }}">الضبط الشفتات </a>
 @endsection
 
 {{-- @section('content_header_active', 'تعديل/') --}}
@@ -18,21 +18,21 @@
         <div class="card">
             <div class="card-header ">
                 <h3 class="card-title card_title_center">
-                    بيانات المؤهلات للموظفيين
+                    بيانات انواع الشفتات
 
-                    <a href="{{ route('qualifications.create') }}" class="btn btn-success ">إضافة</a>
+                    <a href="{{ route('shift_types.create') }}" class="btn btn-success ">إضافة</a>
                 </h3>
             </div>
             <div class="card-body">
-                @if (@isset($data) and !@empty($data))
+                @if (@isset($data) && !@empty($data))
 
                     <table id="example2" class="table table-bordered table-hover ">
                         <thead class="thead-light">
-                            <th>كود الفرع</th>
-                            <th> الاسم</th>
-                            <th> العنوان</th>
-                            <th>الهاتف </th>
-                            <th>الايميل </th>
+                            <th>نوع الشفت </th>
+                            <th> يبدأ من</th>
+                            <th> ينتهي إلي</th>
+                            <th>عدد الساعات </th>
+
                             <th> حالة اتفعيل</th>
                             <th>الإضافة بواسطة</th>
                             <th>التحديث بواسطة</th>
@@ -41,18 +41,13 @@
                         <tbody>
                             @foreach ($data as $info)
                                 <tr>
-                                    <td>{{ $info->id }}</td>
-                                    <td>{{ $info->name }}</td>
-                                    <td>{{ $info->address }}</td>
-                                    <td>{{ $info->phone }}</td>
-                                    <td>{{ $info->email }}</td>
+                                    <td> @if ($info->type == 1) صباحي @else مسائي @endif </td>
+                                    <td>{{ $info->from_time }}</td>
+                                    <td>{{ $info->to_time }}</td>
+                                    <td>{{ $info->total_hours*1 }}</td>
                                     <td class="@if ($info['active'] == 1) bg-success  @else  bg-danger @endif">
-                                @if ($info['active'] == 1)
-                                    مفعل
-                                @else
-                                    غير مفعل
-                                @endif
-                            </td>
+                                        @if ($info['active'] == 1) مفعل @else غير مفعل @endif
+                                    </td>
                                     <td>{{ $info->addedBy->name }}</td>
                                     <td>
                                         @if ($info->updated_by > 0)
@@ -62,8 +57,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('qualifications.edit', $info->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('qualifications.destroy', $info->id) }}" class="btn btn-danger btn-sm my-1 are_u_sure"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="{{ route('shift_types.edit', $info->id) }}"
+                                            class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('shift_types.destroy', $info->id) }}"
+                                            class="btn btn-danger btn-sm my-1 are_u_sure"><i
+                                                class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

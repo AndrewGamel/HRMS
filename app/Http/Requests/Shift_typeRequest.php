@@ -22,14 +22,21 @@ class Shift_typeRequest extends FormRequest
     public function rules(): array
     {
         return [
-          
+            'type'      => 'required',
+            'from_time' => 'required',
+            'to_time' => 'required',
+            'total_hours' => 'required|numeric',
+            'active' => 'required',
         ];
     }
-      public function messages()
-
+    public function messages()
     {
         return [
-
+            'from_time.required'       => 'بداية الشفت  مطلوب',
+            'to_time.required' => ' نهاية الشفت مطلوب',
+            'type.required' => 'نوع الشفت مطلوب',
+            'total_hours.required'      => '  عدد الساعات مطلوب ',
+            'active.required'        => '  التفعيل مطلوب ',
         ];
     }
 }
