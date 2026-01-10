@@ -1,16 +1,15 @@
 @extends('layouts.admin')
 
-@section('title', ' انواع الشفتات')
+@section('title', ' انواع الأدارات')
 
 @section('content_header', ' قائمةالضبط')
 
 
 
 @section('content_header_active_link')
-    <a href="{{ route('shift_types.index') }}">الضبط الشفتات </a>
+    <a href="{{ route('shift_types.index') }}">الضبط الأدارات </a>
 @endsection
 
-{{-- @section('content_header_active', 'تعديل/') --}}
 
 @section('content')
 
@@ -18,7 +17,7 @@
         <div class="card">
             <div class="card-header ">
                 <h3 class="card-title card_title_center">
-                    بيانات انواع الشفتات
+                    بيانات انواع الأدارات
 
                     <a href="{{ route('shift_types.create') }}" class="btn btn-success ">إضافة</a>
                 </h3>
@@ -93,8 +92,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('shift_types.edit', $info->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('shift_types.destroy', $info->id) }}" class="btn btn-danger btn-sm my-1 are_u_sure"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="{{ route('departments.edit', $info->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('departments.destroy', $info->id) }}" class="btn btn-danger btn-sm my-1 are_u_sure"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

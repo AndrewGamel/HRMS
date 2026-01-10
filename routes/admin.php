@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LoginController;
-use App\Http\Controllers\Admin\admin_panal_settingController;
 
 
 
@@ -30,10 +29,9 @@ Route::group(
     function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+        
         /** بداية الضبط العام */
-        Route::get('/genralsettings', [admin_panal_settingController::class, 'index'])->name('admin_panal_settings.index');
-        Route::get('/genralsettings/edit', [admin_panal_settingController::class, 'edit'])->name('admin_panal_settings.edit');
-        Route::post('/genralsettings/update', [admin_panal_settingController::class, 'update'])->name('admin_panal_settings.update');
+        require __DIR__ . '/genralsettings.php';
 
         /** بداية تكويد السنة المالية */
         require __DIR__ . '/finance_calenders.php';
@@ -43,9 +41,12 @@ Route::group(
 
         /** بداية  انواع الشفتات */
         require __DIR__ . '/shift_types.php';
-        
+
         /** بداية  المؤهلات */
         require __DIR__ . '/qualification.php';
+
+        /** بداية  الأدارات */
+        require __DIR__ . '/department.php';
     }
 );
 
