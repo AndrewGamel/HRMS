@@ -7,7 +7,7 @@
 
 
 @section('content_header_active_link')
-    <a href="{{ route('shift_types.index') }}">الضبط الأدارات </a>
+    <a href="{{ route('departments.index') }}">الضبط الأدارات </a>
 @endsection
 
 
@@ -19,7 +19,7 @@
                 <h3 class="card-title card_title_center">
                     بيانات انواع الأدارات
 
-                    <a href="{{ route('shift_types.create') }}" class="btn btn-success ">إضافة</a>
+                    <a href="{{ route('departments.create') }}" class="btn btn-success ">إضافة</a>
                 </h3>
             </div>
             <div class="card-body">
@@ -27,10 +27,8 @@
 
                     <table id="example2" class="table table-bordered table-hover ">
                         <thead class="thead-light">
-                            <th>نوع الشفت </th>
-                            <th> يبدأ من</th>
-                            <th> ينتهي إلي</th>
-                            <th>عدد الساعات </th>
+                            <th>   أسم الأدارة </th>
+                            <th>  الهاتف</th>
                             <th> حالة اتفعيل</th>
                             <th>الإضافة بواسطة</th>
                             <th>التحديث بواسطة</th>
@@ -39,24 +37,8 @@
                         <tbody>
                             @foreach ($data as $info)
                                 <tr>
-                                    <td>
-                                        @if ($info->type == 1) صباحي @else مسائي @endif
-                                    </td>
-                                    <td>@php
-                                        $time =date('h:i', strtotime($info->from_time));
-                                        $newDatetime = date('A', strtotime($info->from_time));
-                                        $newDateTimeType = (( $newDatetime == 'AM')?'صباحاَ' : 'مساء');
-                                    @endphp
-                                    {{ $time . ' '. $newDateTimeType }}
-                                    </td>
-                                    <td>@php
-                                         $time =date('h:i',strtotime($info->to_time));
-                                        $newDatetime = date('A', strtotime($info->to_time));
-                                        $newDateTimeType = (( $newDatetime == 'AM')?'صباحاَ' : 'مساء');
-                                    @endphp
-                                     {{ $time . ' '. $newDateTimeType }}
-                                    </td>
-                                    <td>{{ $info->total_hours * 1 }}</td>
+                                    <td>{{ $info->name }}</td>
+                                    <td>{{ $info->phone }}</td>
                                     <td class="@if ($info['active'] == 1) bg-success  @else  bg-danger @endif">
                                         @if ($info['active'] == 1) مفعل @else غير مفعل @endif
                                     </td>
