@@ -11,6 +11,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --main-color: rgb(59, 145, 136);
+  --secondary-color: #2c4755;
+  --light-green: #7ed56fbe;
+  --medium-green: #55c57e9c;
+  --dark-green: #28b4859d;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -24123,4 +24128,28 @@ a.text-muted:hover {
 .link-black:hover, .link-black:focus {
   color: #e6e8ea;
 }
+.main-cover{
+      background-image: linear-gradient(
+      27deg,
+      var(--light-green),
+      var(--medium-green),
+      var(--dark-green)
+    ),
+    url("{{ asset('assets/admin/dist/img/photo1.png') }}");
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.text-section {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  max-width: 100%;
+  text-align: center;
+}
+
+
+
 /*# sourceMappingURL=adminlte.css.map */
