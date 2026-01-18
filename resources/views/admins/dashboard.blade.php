@@ -21,7 +21,7 @@
       var(--medium-green),
       var(--dark-green)
     ),
-    url({{ asset('assets/admin/dist/img/photo1.png') }}); background-size: cover;  height: calc(100vh - 64px);position: relative;";>
+    url({{ asset('assets/admin/dist/img/photo1.png') }}); background-size: cover;  height:80vh ;position: relative;";>
         <div class="text-section"
             style=" position: absolute;
   top: 40%;
